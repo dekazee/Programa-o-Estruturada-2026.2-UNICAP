@@ -3,6 +3,7 @@
 #define QTD_ALUNO 30
 
 double calcularMedia(double n1, double n2);
+double calcularMediaTurma(double v[], int n);
 void imprimirElementos(double v[], int n);
 
 int main() {
@@ -29,6 +30,10 @@ int main() {
   for (int i = 0; i < QTD_ALUNO; i+=1) {
     media[i] = calcularMedia(nota1[i], nota2[i]);
   }
+
+
+  printf("Media da Turma: %lf\n", calcularMediaTurma(media, QTD_ALUNO));
+  
   
   printf("notas 1: \n");
   imprimirElementos(nota1, QTD_ALUNO);
@@ -45,11 +50,19 @@ int main() {
   return 0;
 }
 
-double calcularMedia(double n1, double n2) {
+double calcularMediaAluno(double n1, double n2) {
   double media;
-  media = (n1 + n2) / 2;
+  media = (n1*2 + n2*3) / 5;
   return media;
 }
+
+double calcularMediaTurma(double v[], int n) {
+  double soma, media;
+  for (int i=0; i < n; i+=1) {
+    soma += v[i];
+  }
+  media = soma / n;
+  return media;
 
 void imprimirElementos(double v[], int n) {
   printf("{ %lf", v[0]);
