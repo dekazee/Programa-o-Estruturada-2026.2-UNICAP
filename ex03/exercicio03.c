@@ -6,6 +6,7 @@ void imprimirVetor(int v[], int n);
 void adicionarElementoPar(int v[], int n, int num);
 void preencherPrimos(int v[], int n);
 void somatorio(int v1[], int v2[], int vsoma[] , int n);
+int procuraBinaria(int v[], int n, int x);
 
 int main() {
     int v1[TAM], v2[TAM], v3[TAM], vsum[TAM];
@@ -72,3 +73,20 @@ void somatorio(int v1[], int v2[], int vsoma[] , int n) {
         ib -= 1;      
 }
 }
+int procuraBinaria(int v[], int n, int x) {
+    int inicio, meio, fim = n;
+    do {
+        meio = fim / 2;
+        if ( v[meio] > x ) {
+            fim = meio;
+        }
+        else if (v[meio] < x) {
+            inicio = meio;
+        } else {
+            return 1;
+        }
+
+    } while( v[meio] != x && inicio < fim)
+}
+
+// {2, 3, 6, 7, 9}
