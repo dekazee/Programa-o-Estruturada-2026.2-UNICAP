@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-#define TAM 15
+#define TAM 7
 
+void preencherOrdenacao(int v[], int n);
+void inserirOrdenado(int v[], int n, int x);
 void imprimirVetor(int v[], int n);
 void adicionarElementoPar(int v[], int n, int num);
 void preencherPrimos(int v[], int n);
@@ -9,17 +11,40 @@ void somatorio(int v1[], int v2[], int vsoma[] , int n);
 int procuraBinaria(int v[], int n, int x);
 
 int main() {
-    int v1[TAM], v2[TAM], v3[TAM], vsum[TAM];
+    int v1[TAM], v2[TAM], v3[TAM], vsum[TAM], continua;
 
-    adicionarElementoPar(v3, TAM, 102);
-    imprimirVetor(v3, TAM);
-    preencherPrimos(v2, TAM);
-    imprimirVetor(v2, TAM);
-    somatorio(v3, v2, vsum, TAM);
-    imprimirVetor(vsum, TAM);
+    preencherOrdenacao(v1, TAM);
+    imprimirVetor(v1, TAM);
+    
+    while( continua == 0 ) {
+        printf("Você deseja fazer uma procura binária?\n");
+        printf("Aperte 1 para procurar um numero");
+        scanf("%d", &continua);
+    }
+    
     return 0;
 
 
+
+}
+
+void preencherOrdenacao(int v[], int n) {
+    int num;
+    for (int i = 0; i < n; i+=1) {
+        printf("Digite um numero: ");
+        scanf(" %d", &num);
+        inserirOrdenado(v, i, num);
+    }
+}
+
+void inserirOrdenado(int v[], int n, int x) {
+    int i;
+    i = n - 1;
+    while(i >= 0 && v[i] > x) {
+        v[i+1] = v[i];
+        i -=1;
+    }
+    v[i+1] = x;
 
 }
 
@@ -86,7 +111,7 @@ int procuraBinaria(int v[], int n, int x) {
             return 1;
         }
 
-    } while( v[meio] != x && inicio < fim)
+    } while( v[meio] != x && inicio < fim);
 }
 
 // {2, 3, 6, 7, 9}
