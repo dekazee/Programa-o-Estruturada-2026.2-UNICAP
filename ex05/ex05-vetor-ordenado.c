@@ -23,7 +23,7 @@ int main() {
 
 void preencherAleatorio(double v[], int n) {
     for (int i = 0; i < n; i +=1) {
-        v[i] = rand() / 1000000;
+        v[i] = rand() / 1000000.0;
     }
 
 }
