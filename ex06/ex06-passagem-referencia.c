@@ -17,4 +17,5 @@ void troca(int *a, int *b) {
     *a = *b;
     *b = aux;
     printf("*a = %d e *b = %d\n", *a, *b);
+    
 }
