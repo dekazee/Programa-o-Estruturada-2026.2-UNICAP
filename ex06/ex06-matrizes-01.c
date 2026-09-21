@@ -10,6 +10,8 @@ int buscarMatriz(int m[][QTD_COLUNA], int lins, int cols, int x, int *posI, int 
 void somatorioLinhas(int m[][QTD_COLUNA], int lins, int cols, int soma[]);
 void somatorioColunas(int m[][QTD_COLUNA], int lins, int cols, int soma[]);
 void zerarAbaixoDiagonalPrincipal(int m[][QTD_COLUNA], int lins, int cols);
+void zerarAcimaDiagonalSecundaria(int m[][QTD_COLUNA], int lins, int cols);
+void zerarAcimaDiagonalSecundaria2(int m[][QTD_COLUNA], int lins, int cols);
 
 int main() {
     int matriz[QTD_LINHAS][QTD_COLUNA];
@@ -171,5 +173,30 @@ void zerarAbaixoDiagonalPrincipal(int m[][QTD_COLUNA], int lins, int cols) {
         printf("Essa matriz não tem diagonal principal");
     }
 
+}*/
+
+void zerarAcimaDiagonalSecundaria(int m[][QTD_COLUNA], int lins, int cols) {
+    if (lins != cols) {
+        printf("Esta matriz não tem diagonal secundária");
+        return;
+    }
+    for ( int i = 0; i < lins; i += 1) {
+        for (int j = 0; j < cols; j += 1) {
+            if (i + j < lins - 1) {
+                m[i][j] = 0;
+            }
+        }
+    }
 }
-    */
+
+void zerarAcimaDiagonalSecundaria2(int m[][QTD_COLUNA], int lins, int cols) {
+    if (lins != cols) {
+        printf("Esta matriz não tem diagonal secundária");
+        return;
+    }
+    for(int i = 0; i < lins - 1; i += 1) {
+        for(int j = 0; j < lins - 1 - i; j += 1) {
+            m[i][j] = 0;
+        }
+    }
+}
