@@ -1,0 +1,78 @@
+São Paulo
+16.800.000
+195.000
+Minas Gerais
+6.300.000
+98.000
+Rio de Janeiro
+4.900.000
+82.000
+Paraná
+4.200.000
+72.000
+Rio Grande do Sul
+4.000.000
+68.000
+Santa Catarina
+2.800.000
+52.000
+Bahia
+2.300.000
+46.000
+Goiás
+2.100.000
+41.000
+Pernambuco
+1.600.000
+35.000
+Ceará
+1.500.000
+32.000
+Mato Grosso
+1.200.000
+28.000
+Espírito Santo
+1.100.000
+26.000
+Pará
+1.000.000
+22.000
+Mato Grosso do Sul
+850.000
+18.000
+Maranhão
+750.000
+15.000
+Paraíba
+600.000
+13.000
+Rio Grande do Norte
+580.000
+12.000
+Piauí
+480.000
+9.500
+Amazonas
+450.000
+11.000
+Alagoas
+420.000
+8.500
+Rondônia
+400.000
+9.000
+Sergipe
+360.000
+7.500
+Tocantins
+300.000
+6.000
+Acre
+130.000
+3.000
+Amapá
+95.000
+2.200
+Roraima
+90.000
+2.100

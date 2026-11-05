@@ -153,3 +153,25 @@ void bubbleSortPorIdade(struct Pessoa v[], int n) {
     }
     
 }
+
+
+void bubbleSortPorNome(struct Pessoa v[], int n) {
+    int i, fim, pos, troca;
+    struct Pessoa chave;
+    troca = 1; fim = n - 2; pos = 0;
+    while (troca == 1) {
+        troca = 0;
+        for ( i = 0; i <= fim; i++) {
+            if(strcmp(v[i].nome, v[i+1].nome) > 0) {
+                chave = v[i];
+                v[i] = v[i+1];
+                v[i+1] = chave;
+                pos = i;
+                troca = 1;
+            }
+        }
+        fim = pos - 1;
+    }
+    
+}
+
