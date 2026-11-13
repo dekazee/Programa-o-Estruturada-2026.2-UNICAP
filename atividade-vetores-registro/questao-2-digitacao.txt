@@ -1,0 +1,160 @@
+101
+Arroz Branco 5kg
+24.90
+50
+102
+Feijao Carioca 1kg
+8.50
+30
+103
+Acucar Cristal 1kg
+4.20
+40
+104
+Cafe Torrado 500g
+16.80
+25
+105
+Oleo de Soja 900ml
+6.99
+60
+106
+Leite Integral 1L
+5.40
+45
+107
+Macarrao Espaguete 500g
+3.80
+35
+108
+Molho de Tomate 340g
+2.90
+50
+109
+Sal Refinado 1kg
+2.50
+30
+110
+Farinha de Trigo 1kg
+5.10
+20
+111
+Manteiga com Sal 200g
+11.50
+15
+112
+Margarina 500g
+7.30
+25
+113
+Queijo Mussarela 500g
+22.00
+12
+114
+Presunto Cozido 500g
+15.90
+18
+115
+Pao de Forma 500g
+8.20
+22
+116
+Biscoito Cream Cracker 200g
+4.50
+30
+117
+Biscoito Recheado 140g
+3.20
+40
+118
+Achocolatado em Po 400g
+9.80
+25
+119
+Suco de Laranja 1L
+7.90
+20
+120
+Refrigerante Cola 2L
+9.50
+30
+121
+Agua Mineral 1.5L
+2.80
+80
+122
+Cerveja Lata 350ml
+3.90
+50
+123
+Peito de Frango 1kg
+18.90
+25
+124
+Carne Moida 1kg
+34.50
+15
+125
+Linguica Toscana 1kg
+21.00
+20
+126
+Ovos Brancos 12 un
+10.50
+40
+127
+Batata Inglesa 1kg
+6.40
+35
+128
+Cebola 1kg
+5.80
+30
+129
+Tomate 1kg
+7.90
+25
+130
+Alho 200g
+6.50
+18
+131
+Banana Prata 1kg
+5.20
+30
+132
+Maca Gala 1kg
+9.40
+22
+133
+Sabonete 90g
+2.60
+60
+134
+Creme Dental 90g
+4.90
+45
+135
+Shampoo 400ml
+14.50
+20
+136
+Condicionador 400ml
+15.90
+18
+137
+Papel Higienico 12 un
+18.00
+25
+138
+Detergente Liquido 500ml
+2.40
+50
+139
+Sabao em Po 1kg
+12.90
+30
+140
+Agua Sanitaria 2L
+6.20
+35
