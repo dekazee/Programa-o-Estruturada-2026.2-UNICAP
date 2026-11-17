@@ -2,7 +2,7 @@
 #include <string.h>
 
 #define TAM 255
-#define QTD_CONTAS 30
+#define QTD_CONTAS 100
 
 
 struct Cadastro {
@@ -18,6 +18,11 @@ void cadastraPessoa(struct Cadastro *c);
 void lerStr(char str[], int tamMax);
 int posicaoCadastro(int num, struct Cadastro c[], int qtd);
 void cadastraNovaConta(struct Cadastro c[], int *qtd, int nConta);
+void consultarSaldo(struct Cadastro c[], int nConta);
+void depositarConta(struct Cadastro c[], int nConta);
+void sacarConta(struct Cadastro c[], int nConta);
+void imprimirContas(struct Cadastro c[], int tam);
+void imprimirUmaConta(struct Cadastro c);
 
 int main() {
     struct Cadastro cadastros[40];
@@ -29,12 +34,12 @@ int main() {
     }
     printf("Decida: ");
     printf("\n(digite 0 para cancelar o processo)\n");
-    printf("1(a): \n 2(b): \n 3(c): \n 4(d): \n 5(e): \n");
+    printf("1(a): \n 2(b): \n 3(c): \n 4(d): \n 5(e): \n 6(f) \n");
     scanf("%d", &decisao);
-    while(decisao < 0 || decisao > 5) {
-        printf("Digite a decisao entre 0 a 5: ");
+    while(decisao < 0 || decisao > 6) {
+        printf("Digite a decisao entre 0 a 6: ");
         scanf("%d", &decisao);
-    }
+    } // aqui seria melhor usar um switch case, mas agora já é tarde
     if(decisao == 1) {
         printf("Digite o numero da conta: ");
         scanf("%d", &numero);
@@ -51,7 +56,19 @@ int main() {
         scanf("%d", &numero);
         cadastraNovaConta(cadastros, &j, numero);
     } else if (decisao == 3) {
-        
+        printf("Digite o num da conta: ");
+        scanf("%d", &numero);
+        consultarSaldo(cadastros, numero);
+    } else if(decisao == 4) {
+        printf("Digite o num da conta: ");
+        scanf("%d", &numero);
+        depositarConta(cadastros, numero);
+    } else if(decisao == 5) {
+        printf("Digite o num da conta: ");
+        scanf("%d", &numero);
+        sacarConta(cadastros, numero);
+    } else {
+        imprimirContas(cadastros, QTD_CONTAS);
     }
     printf("%d", j);
 
@@ -112,4 +129,62 @@ void cadastraNovaConta(struct Cadastro c[], int *qtd, int nConta) {
         lerStr(temp, 10);
         *qtd += 1;
     }
+}
+
+void consultarSaldo(struct Cadastro c[], int nConta) {
+    int i = posicaoCadastro(nConta, c, QTD_CONTAS);
+    if(i > -1) {
+        printf("Saldo é de: %lf\n", c[i].saldo);
+    } else {
+        printf("Numero da Conta não existe\n");
+    }
+}
+
+void depositarConta(struct Cadastro c[], int nConta) {
+    int i = posicaoCadastro(nConta, c, QTD_CONTAS);
+    double valor;
+    if(i > -1) {
+        printf("Qual valor deseja depositar?\n");
+        scanf("%lf", &valor);
+        printf("Saldo anterior ao deposito: %lf\n", c[i].saldo);
+        c[i].saldo += valor;
+        printf("Saldo atual: %lf\n", c[i].saldo);
+    } else {
+        printf("Numero da Conta não existe\n");
+    }
+
+}
+
+void sacarConta(struct Cadastro c[], int nConta) {
+    int i = posicaoCadastro(nConta, c, QTD_CONTAS);
+    double saque;
+    if(i > -1) {
+        printf("Qual valor deseja sacar?\n");
+        scanf("%lf", &saque);
+        if(c[i].saldo >= saque) {
+        printf("Saldo anterior ao saque: %lf\n", c[i].saldo);
+        c[i].saldo -= saque;
+        printf("Saldo atual: %lf\n", c[i].saldo);
+        } else {
+            printf("Saldo insuficiente.\n");
+        }
+    } else {
+        printf("Numero da Conta não existe\n");
+    }
+
+}
+
+void imprimirContas(struct Cadastro c[], int tam) {
+    for (int i = 0; i < tam; i += 1) {
+        imprimirUmaConta(c[i]);
+        printf("\n=========================\n");
+    }
+}
+
+void imprimirUmaConta(struct Cadastro c) {
+    printf("Nome: %s\n", c.nome);
+    printf("CPF: %s\n", c.cpf);
+    printf("Numero da Conta: %s\n", c.numConta);
+    printf("Saldo: %.2lf\n", c.saldo);
+    printf("Telefone: %s\n", c.telefone);
 }
