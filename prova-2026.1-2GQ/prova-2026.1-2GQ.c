@@ -157,10 +157,10 @@ int realizarSaque(struct Conta vContas[], int tamConta,
         return 0;
     }
 
-    /* Atualiza o saldo da conta */
+    
     vContas[posicao].saldo -= valor;
 
-    /* Registra a operacao */
+    
     vOp[*tamOp].id = *tamOp + 1;
     vOp[*tamOp].idConta = idConta;
     vOp[*tamOp].tipo = 'S';
@@ -190,6 +190,8 @@ const char *descricaoOperacao(char tipo) {
     }
 }
 
+
+// Essa questão 5 e sua função auxiliar, eu usei IA. Eu realmente não entendi ela quando fui fazer a prova.
 /* QUESTÃO 5 - EXTRATO BANCÁRIO */
 void extrato(struct Conta vContas[], int tamConta,
              struct Operacao vOp[], int *tamOp) {
